@@ -1,0 +1,55 @@
+﻿@page
+@model CousreManagement_TungPV_WebRazorPage.Pages.Semeters.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Semeter</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Semeter.Id" />
+            <div class="form-group">
+                <label asp-for="Semeter.Name" class="control-label"></label>
+                <input asp-for="Semeter.Name" class="form-control" />
+                <span asp-validation-for="Semeter.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semeter.Description" class="control-label"></label>
+                <input asp-for="Semeter.Description" class="form-control" />
+                <span asp-validation-for="Semeter.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semeter.StartDate" class="control-label"></label>
+                <input asp-for="Semeter.StartDate" class="form-control" />
+                <span asp-validation-for="Semeter.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semeter.EndDate" class="control-label"></label>
+                <input asp-for="Semeter.EndDate" class="form-control" />
+                <span asp-validation-for="Semeter.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Semeter.MajorId" class="control-label"></label>
+                <select asp-for="Semeter.MajorId" class="form-control" asp-items="ViewBag.MajorId"></select>
+                <span asp-validation-for="Semeter.MajorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,67 @@
+﻿@page
+@model CousreManagement_TungPV_WebRazorPage.Pages.Courses.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Course.Id" class="control-label"></label>
+                <input asp-for="Course.Id" class="form-control" />
+                <span asp-validation-for="Course.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Name" class="control-label"></label>
+                <input asp-for="Course.Name" class="form-control" />
+                <span asp-validation-for="Course.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.SubjectId" class="control-label"></label>
+                <select asp-for="Course.SubjectId" class ="form-control" asp-items="ViewBag.SubjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.SemeterId" class="control-label"></label>
+                <input asp-for="Course.SemeterId" class="form-control" />
+                <span asp-validation-for="Course.SemeterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.InstructorId" class="control-label"></label>
+                <select asp-for="Course.InstructorId" class ="form-control" asp-items="ViewBag.InstructorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Shedule" class="control-label"></label>
+                <input asp-for="Course.Shedule" class="form-control" />
+                <span asp-validation-for="Course.Shedule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Room" class="control-label"></label>
+                <input asp-for="Course.Room" class="form-control" />
+                <span asp-validation-for="Course.Room" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Course.Decription" class="control-label"></label>
+                <input asp-for="Course.Decription" class="form-control" />
+                <span asp-validation-for="Course.Decription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

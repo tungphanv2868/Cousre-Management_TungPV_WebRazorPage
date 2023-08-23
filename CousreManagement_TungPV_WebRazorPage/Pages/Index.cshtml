@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4 font-weight-bold">WELCOME TO COURSE MANAGEMENT </h1>
+</div>
+
+
+<div class="d-flex justify-content-center">
+        <form method="post">
+            <div class="mb-3 row">
+                <div class="col-sm-3">
+                    <label class="col-form-label font-weight-bold">Email</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="ID">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-3">
+                    <label class="col-form-label font-weight-bold">Password</label>
+                </div>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" name="password">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-6">
+                    <input type="submit" value="Login" class="btn btn-info" />
+                </div>
+            </div>
+        </form>
+</div>
